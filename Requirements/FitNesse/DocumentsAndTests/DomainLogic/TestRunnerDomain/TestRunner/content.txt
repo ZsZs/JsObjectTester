@@ -1,0 +1,7 @@
+!3 Test Runner - Domain Term Documentation and Tests
+!***> Test Runner - Domain Term Details
+!img http://files/JsObjectTester/Images/BusinessModel_CahootUserDetails.gif
+***!
+
+'''Rule:''' 
+|'''!-InstantiateTestRunner-!'''|

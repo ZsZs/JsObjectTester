@@ -1,0 +1,33 @@
+!3 !-JsObjectTester-! - Documentation and Tests
+!anchor businessmodel
+!3 Business-Model
+The application's documentation and test structure follows the Business Model's structure, therefore:
+!***> Business Model - Overview
+!img http://files/Cahoot/Images/BusinessModel_BusinessModelOverview.gif
+***!
+ * '''Business terms and rules''' are specified and tested in the context of [[Domain Model][^DomainLogic]]
+ * '''The consistent sets of datas used in workflows, especially in activities''' are specified and tested as [[Work Products][>WorkProducts]]
+ * '''The consistent sets of activities performed by humans playing a role''' are specified and tested as [[Roles][^RolesPackage]]
+ * '''The complex series of business activities''' are specified and tested as [[Workflows][^WorkFlows]]
+ * '''The system's usability''' is specified and tested in the context of [[Use Cases][^UseCases]]
+!anchor designmodel
+!3 Design Model
+As the diagram below depicts, '''!-JsObjectTester-!''' has a complex component based, Service Oriented Architecture reflecting the very different concerns to which the system should comply.
+!***> Component Dependencies
+!img http://files/Cahoot/Images/DesignModel_ApplicationComponentsOverview.gif
+***!
+ * '''The mobile interface elements''' through which the application mainly used are specified and tested in the '''[[PDA UI][>PdaUi]]''' component.
+ * '''The web services''' - which provide access to the back-end application's data and logic are specified and tested in the '''[[Web Service BUS][>WebServiceBus]]''' component.
+
+According to the [[Domain Driven Desing][http://domaindrivendesign.org/]] and [[Business Model Driven Development][http://bmdd.hu]] principles the [[Domain layer][>DomainLogic]] implements the problem domain specific knowledge, in [[Workproduct layer][>WorkProducts]] manifest data sets used by human activities. Technological issues, such as persistency or user interface are taken away from domain layer to the integration, control and presentation layers. Corresponding to this design rules different kind of specifications and test are written againts the different layers:
+ * '''[[Presentation Layer][>UseCases]]'''
+ * '''[[Work Product Layer][>WorkProducts]]'''
+ * '''[[Domain Layer][>DomainLogic]]'''
+ * '''[[Integration Layer][>IntegrationLayer]]'''
+!3 [[Performance Tests][>PerformanceTests]]
+While functional requirements are key, almost always any kind of application should also fulfill certain performance requirements too. Most of the time none functional requirements can be specified in the context of a one ore more functional requirements like [[Use Cases][>UseCases]] or [[Workflows][>WorkFlows]], therefore the referred tests below will reference these items. The application's performance criteria can be categorized as follows:
+ * '''[[Load Tests][>PerformanceTests.LoadTests]]'''
+
+!3 Common Test Fixtures
+To be able to eliminate any kind of redundancy in test cases the recurring elements, parts should extracted turned to reusable test components. Below those test components are listed which can be reused in many of the test above.
+ * '''[[Common Fixtures][>CommonFixtures]]''' constitutes reusable elements in the specifications above.
